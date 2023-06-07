@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Vue Livecoding</title>
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+        <link rel="stylesheet" href="./styles/style.css">
+    </head>
+    <body>
+        <!-- Vue 3 -->
+        <script src="https://unpkg.com/vue@3"></script>
+
+        <div id="app">
+            <header>
+                <h1>
+                    ListaVue
+                </h1>
+            </header>
+
+            <div class="todo-list">
+                <h2 v-if="todoList.length === 0">
+                    There are no more todo elements... Please add a new one to start listing them!
+                </h2>
+
+                <ul v-else>
+                    <li v-for="(todoItem, index) in todoList"  @click="checkTodoElement(index)" v-show="!todoItem.deleted">
+                        <p>
+                            <span
+                                class="todo-wrapper" :class="todoItem.done ? 'done' : ''">
+                                {{ todoItem.text }}
+                            </span>
+                            <span @click.stop="removeTodoElement(index)">
+                                <i class="fa-solid fa-eraser"></i>
+                            </span>
+                        </p>
+
+                    </li>
+                </ul>
+
+                <div class="action-bar">
+                    <div>
+                        <input type="text" v-model="newElement" @keyup.enter="addNewTodoElement(newElement)">
+                        <button class="todo-adder" @click="addNewTodoElement(newElement)"
+                            >
+                            Add new todo item
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+
+        <script src="js/script.js"></script>
+    </body>
+</html>
