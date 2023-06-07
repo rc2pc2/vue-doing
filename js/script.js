@@ -5,29 +5,29 @@ createApp({
         return {
             todoList: [
                 {
-                    text: 'Mangiare',
+                    text: 'Eat',
                     done: false,
                     // deleted: false,
                 },
                 {
-                    text: 'Visitare la luna',
+                    text: 'Visit the moon',
                     done: false,
                     // deleted: false,
                 },
                 {
-                    text: 'Uscire il cane',
+                    text: 'Walk the dog',
                     done: true,
                     // deleted: false,
 
                 },
                 {
-                    text: 'Scendi la valigia',
+                    text: 'Get the luggage',
                     done: true,
                     // deleted: false,
 
                 },
                 {
-                    text: 'Distruggere il capitalismo',
+                    text: 'Love everybody',
                     done: false,
                     // deleted: false,
 
